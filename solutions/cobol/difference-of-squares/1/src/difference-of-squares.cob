@@ -1,0 +1,34 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. difference-of-squares.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 WS-DIFFERENCE-OF-SQUARES PIC 9(8).
+       01 WS-SUM-OF-SQUARES PIC 9(8).
+       01 WS-SQUARE-OF-SUM PIC 9(8).
+       01 WS-NUMBER PIC 9(8).
+         01 I   PIC 9(8).
+         01 SQ   PIC 9(9).
+         01 WS-SUM   PIC 9(9).
+
+       PROCEDURE DIVISION.
+       
+       SQUARE-OF-SUM.
+         MOVE 0 TO WS-SUM
+         PERFORM VARYING I FROM 1 BY 1 UNTIL I > WS-NUMBER
+            ADD I TO WS-SUM
+         END-PERFORM.
+         COMPUTE WS-SQUARE-OF-SUM = WS-SUM * WS-SUM.
+       
+       SUM-OF-SQUARES.
+         
+
+         MOVE 0 TO WS-SUM-OF-SQUARES
+         PERFORM VARYING I FROM 1 BY 1 UNTIL I > WS-NUMBER
+            COMPUTE SQ = I * I
+            ADD SQ TO WS-SUM-OF-SQUARES
+         END-PERFORM.
+       
+       DIFFERENCE-OF-SQUARES.
+         COMPUTE WS-DIFFERENCE-OF-SQUARES = WS-SQUARE-OF-SUM - WS-SUM-OF-SQUARES
+
+
